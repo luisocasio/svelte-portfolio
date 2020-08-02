@@ -1,30 +1,27 @@
 <script>
-	export let name;
+  import NavBar from './components/NavBar.svelte';
+  import Carousel from './components/Carousel.svelte';
+  let src = 'assets/denverBanner.png';
+  let desc = 'art-work';
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  #banner-section {
+    margin-top: 5rem;
+  }
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  #banner {
+    width: 100%;
+  }
 </style>
+
+<main>
+  <NavBar />
+
+  <section id="banner-section">
+    <img id="banner" alt={desc} {src} />
+  </section>
+
+  <Carousel />
+
+</main>
