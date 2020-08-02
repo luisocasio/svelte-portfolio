@@ -102,7 +102,6 @@
 <main>
 
   <div id="carousel-wrapper">
-
     <img
       id="previous"
       alt="go-back-arrow"
@@ -121,7 +120,6 @@
     <img id="next" alt="next-arrow" src={nextSlide} on:click={next} />
 
     <div id="text-wrapper">
-
       <div id="text-section">
         <section>
           <p>
