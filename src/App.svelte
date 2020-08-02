@@ -1,6 +1,7 @@
 <script>
   import NavBar from './components/NavBar.svelte';
   import Carousel from './components/Carousel.svelte';
+  import About from './components/About.svelte';
   let src = 'assets/denverBanner.png';
   let desc = 'art-work';
 </script>
@@ -23,5 +24,7 @@
   </section>
 
   <Carousel />
+
+  <About />
 
 </main>
