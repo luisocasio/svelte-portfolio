@@ -1,5 +1,5 @@
 <script>
-  import { scale } from 'svelte/transition';
+  import { fly, fade } from 'svelte/transition';
   import { each } from 'svelte/internal';
   let project1 = '/assets/projects/jaems.png';
   let project2 = '/assets/projects/latte-site.jpg';
@@ -42,23 +42,27 @@
   }
 
   #carousel-slides {
-    width: 325px;
-    height: 450px;
+    width: 75%;
+    height: 550px;
+    border-radius: 5px;
   }
 
   #previous {
-    width: 150px;
+    width: 50px;
     padding: 1rem;
+    z-index: 1;
   }
 
   #next {
-    width: 150px;
+    width: 50px;
     padding: 1rem;
+    z-index: 1;
   }
 
   #project_buttons {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
     margin-top: 2.5rem;
   }
@@ -66,7 +70,7 @@
     background-color: #21367f;
     color: #fff;
     border: 4px solid #2dfafc;
-    width: 250px;
+    width: 125px;
     height: 48px;
     text-decoration: none;
     border-radius: 35px;
@@ -74,18 +78,31 @@
   }
   #view {
     color: #fff;
-    background-color: #2dfafc;
-    width: 250px;
+    border: 4px solid #2dfafc;
+    background-color: #15202b;
+    width: 125px;
     height: 48px;
     text-decoration: none;
     border-radius: 35px;
     font-size: 1.5rem;
+  }
+  #text-wrapper {
+    display: flex;
+  }
+  #text-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-left: 2px solid #d617bd;
+    width: 100%;
+    text-align: center;
   }
 </style>
 
 <main>
 
   <div id="carousel-wrapper">
+
     <img
       id="previous"
       alt="go-back-arrow"
@@ -93,20 +110,41 @@
       on:click={previous} />
     <div id="carousel">
       {#each [Projects[index]] as src (index)}
-        <img id="carousel-slides" transition:scale alt={name} {src} />
+        <img
+          id="carousel-slides"
+          alt={name}
+          {src}
+          in:fly={{ x: -2000, duration: 2000 }} />
       {/each}
     </div>
 
     <img id="next" alt="next-arrow" src={nextSlide} on:click={next} />
 
-  </div>
+    <div id="text-wrapper">
 
-  <div id="project_buttons">
+      <div id="text-section">
+        <section>
+          <p>
+            The code button will redirect you to github where you can view all
+            the code for a specific project
+          </p>
+        </section>
 
-    {#each [projectSite[index]] as src (index)}
-      <button id="code">CODE</button>
-      <button id="view">VIEW</button>
-    {/each}
+        <section>
+          <p>
+            The view button will redirect you to the deployed site of a specific
+            project
+          </p>
+        </section>
+
+        <div id="project_buttons">
+          {#each [projectSite[index]] as src (index)}
+            <button id="code">CODE</button>
+            <button id="view">VIEW</button>
+          {/each}
+        </div>
+      </div>
+    </div>
   </div>
 
 </main>
