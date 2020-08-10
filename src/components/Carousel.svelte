@@ -25,9 +25,13 @@
     index = (index - 1) % Projects.length;
   };
 
-  const code = () => {};
+  const code = () => {
 
-  const view = () => {};
+  };
+
+  const view = () => {
+    
+  };
 </script>
 
 <style>
