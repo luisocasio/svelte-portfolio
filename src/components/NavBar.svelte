@@ -8,7 +8,7 @@
   }
   #nav-bar {
     background-color: #21367f;
-    height: 50px;
+    height: 95px;
     display: flex;
     align-items: center;
   }
@@ -20,14 +20,15 @@
     width: 100%;
   }
   #nav-links {
-    width: 50%;
+    width: 25%;
+    text-align: center;
   }
 
   #route-links {
     display: flex;
     justify-content: space-evenly;
-    width: 25%;
-    font-size: 1rem;
+    width: 50%;
+    font-size: 1.25rem;
   }
 </style>
 
