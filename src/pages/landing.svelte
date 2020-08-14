@@ -1,28 +1,27 @@
 <script>
-  import Carousel from '../components/Carousel.svelte';
-  import About from '../components/About.svelte';
-  import Footer from '../components/Footer.svelte';
+  import Carousel from "../components/Carousel.svelte";
+  import About from "../components/About.svelte";
+  import Footer from "../components/Footer.svelte";
 
-  let src = 'assets/denverBanner.png';
-  let desc = 'art-work';
+  let src = "assets/denverBanner.png";
+  let desc = "art-work";
 </script>
 
 <style>
   #banner-section {
-    margin-top: 2.5rem;
+    width: 100%;
+    height: 500px;
   }
-
   #banner {
     width: 100%;
+    height: 100%;
   }
 </style>
 
-<main>
-  <section id="banner-section">
-    <img id="banner" alt={desc} {src} />
-  </section>
-
-  <Carousel />
-  <About />
-  <Footer />
+<main id="banner-section">
+  <img id="banner" alt={desc} {src} />
 </main>
+
+<Carousel />
+<About />
+<Footer />

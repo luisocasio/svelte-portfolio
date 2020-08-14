@@ -1,152 +1,179 @@
 <script>
-  import { fly, fade } from 'svelte/transition';
-  import { each } from 'svelte/internal';
-  let project1 = '/assets/projects/jaems.png';
-  let project2 = '/assets/projects/latte-site.jpg';
-  let project3 = '/assets/projects/market.png';
-  let previousSlide = '/assets/svg/back.svg';
-  let nextSlide = '/assets/svg/next.svg';
-  let name = 'web-sites';
+  import { fly, fade } from "svelte/transition";
+  let src = "./assets/svg/royalblueHeader.svg";
+  let project1 = "/assets/projects/jaems.png";
+  let project2 = "/assets/projects/latte-site.jpg";
+  let project3 = "/assets/projects/market.png";
+  let previousSlide = "/assets/svg/back.svg";
+  let nextSlide = "/assets/svg/next.svg";
+  let name = "web-sites";
 
   const Projects = [project1, project2, project3];
+
   const projectSite = [
-    'https://www.jaemsounds.com/',
-    'https://latteluv.netlify.app/',
-    'https://marketavenue.netlify.app/',
+    { Jaemsound: "https://www.jaemsounds.com/" },
+    { Latteluv: "https://latteluv.netlify.app/" },
+    { MarketAve: "https://marketavenue.netlify.app/" },
+  ];
+
+  const git = [
+    { Jaemsound: "https://github.com/LuisOcasio/Jaemsounds-Gatsby-WP-AWS" },
+    { Latteluv: "https://github.com/LuisOcasio/latte-luv" },
+    { MarketAve: "https://github.com/Lambda-School-Labs/quick-street-be" },
   ];
 
   let index = 0;
+  let slide = 0;
+
+  $: view = Object.keys(projectSite[slide]);
+  $: url = Object.values(projectSite[slide]);
+  $: gits = Object.values(git[slide]);
 
   const next = () => {
     index = (index + 1) % Projects.length;
+    slide = (slide + 1) % projectSite.length;
   };
 
   const previous = () => {
-    index = (index - 1) % Projects.length;
-  };
-
-  const code = () => {
-
-  };
-
-  const view = () => {
-    
+    if (index && slide) {
+      index = (index - 1) % Projects.length;
+      slide = (slide - 1) % projectSite.length;
+    }
   };
 </script>
 
 <style>
+  #project-title {
+    text-align: right;
+  }
   #carousel-wrapper {
-    margin-top: 2.5rem;
+    height: 100%;
     display: flex;
+    width: 100%;
+    background-color: #2dfafc;
   }
   #carousel {
     width: 100%;
     display: flex;
     justify-content: center;
   }
-
   #carousel-slides {
     width: 75%;
-    height: 550px;
+    height: 400px;
+    padding: 0.5rem;
     border-radius: 5px;
   }
 
   #previous {
-    width: 50px;
+    width: 25px;
     padding: 1rem;
     z-index: 1;
   }
 
   #next {
-    width: 50px;
+    width: 25px;
     padding: 1rem;
     z-index: 1;
   }
 
   #project_buttons {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    margin-top: 2.5rem;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 0.5rem;
   }
   #code {
     background-color: #21367f;
     color: #fff;
     border: 4px solid #2dfafc;
-    width: 125px;
-    height: 48px;
+    width: 90px;
+    height: 32.5px;
     text-decoration: none;
     border-radius: 35px;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   #view {
     color: #fff;
     border: 4px solid #2dfafc;
     background-color: #15202b;
-    width: 125px;
-    height: 48px;
+    width: 90px;
+    height: 32.5px;
     text-decoration: none;
     border-radius: 35px;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   #text-wrapper {
     display: flex;
+    justify-content: flex-end;
   }
   #text-section {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     border-left: 2px solid #d617bd;
-    width: 100%;
+    letter-spacing: 0.1rem;
+    padding: 1.5rem;
+    color: #000;
+    align-items: center;
     text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  #section1 {
+    border-bottom: 2px solid #d617bd;
+    height: 30%;
+  }
+  #section2 {
+    border-bottom: 2px solid #d617bd;
+    height: 70%;
   }
 </style>
 
-<main>
+<section id="project-title">
+  <img id="header" {src} alt="blue-header" />
+  <h3>{view}</h3>
+</section>
 
-  <div id="carousel-wrapper">
+<div id="carousel-wrapper">
+  <div id="carousel">
     <img
       id="previous"
       alt="go-back-arrow"
       src={previousSlide}
       on:click={previous} />
-    <div id="carousel">
-      {#each [Projects[index]] as src (index)}
-        <img
-          id="carousel-slides"
-          alt={name}
-          {src}
-          in:fly={{ x: -2000, duration: 2000 }} />
-      {/each}
-    </div>
-
+    {#each [Projects[index]] as src (index)}
+      <img
+        id="carousel-slides"
+        alt={name}
+        {src}
+        in:fly={{ x: -2000, duration: 2000 }} />
+    {/each}
     <img id="next" alt="next-arrow" src={nextSlide} on:click={next} />
+  </div>
 
-    <div id="text-wrapper">
-      <div id="text-section">
-        <section>
-          <p>
-            The code button will redirect you to github where you can view all
-            the code for a specific project
-          </p>
-        </section>
+  <div id="text-wrapper">
+    <div id="text-section">
+      <section id="section1">
+        <p>
+          The code button will redirect you to github where you can view all the
+          code for a specific project
+        </p>
+      </section>
+      <section id="section2">
+        <p>
+          The view button will redirect you to the deployed site of a specific
+          project
+        </p>
+      </section>
 
-        <section>
-          <p>
-            The view button will redirect you to the deployed site of a specific
-            project
-          </p>
-        </section>
-
-        <div id="project_buttons">
-          {#each [projectSite[index]] as src (index)}
-            <button id="code">CODE</button>
-            <button id="view">VIEW</button>
-          {/each}
-        </div>
+      <div id="project_buttons">
+        <button id="code">
+          <a href={gits}>CODE</a>
+        </button>
+        <button id="view">
+          <a href={url}>VIEW</a>
+        </button>
       </div>
     </div>
   </div>
-
-</main>
+</div>
