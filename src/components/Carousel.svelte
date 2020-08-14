@@ -44,10 +44,11 @@
 
 <style>
   #project-title {
-    text-align: right;
+    text-align: center;
+    color: #000;
   }
   #carousel-wrapper {
-    height: 100%;
+    height: 650px;
     display: flex;
     width: 100%;
     background-color: #2dfafc;
@@ -55,31 +56,35 @@
   #carousel {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+
+    align-items: center;
   }
   #carousel-slides {
-    width: 75%;
-    height: 400px;
+    width: 50%;
+    height: 450px;
     padding: 0.5rem;
     border-radius: 5px;
   }
 
   #previous {
-    width: 25px;
-    padding: 1rem;
+    width: 50px;
+    padding: 3rem;
     z-index: 1;
   }
 
   #next {
-    width: 25px;
-    padding: 1rem;
+    width: 50px;
+    padding: 3rem;
     z-index: 1;
   }
 
   #project_buttons {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 50%;
+    height: 15%;
     margin-top: 0.5rem;
   }
   #code {
@@ -111,7 +116,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     border-left: 2px solid #d617bd;
-    letter-spacing: 0.1rem;
     padding: 1.5rem;
     color: #000;
     align-items: center;
@@ -121,17 +125,20 @@
   }
   #section1 {
     border-bottom: 2px solid #d617bd;
-    height: 30%;
+    height: 50%;
+    display: flex;
+    align-items: center;
   }
   #section2 {
     border-bottom: 2px solid #d617bd;
-    height: 70%;
+    height: 50%;
+    display: flex;
+    align-items: center;
   }
 </style>
 
 <section id="project-title">
   <img id="header" {src} alt="blue-header" />
-  <h3>{view}</h3>
 </section>
 
 <div id="carousel-wrapper">
@@ -153,6 +160,7 @@
 
   <div id="text-wrapper">
     <div id="text-section">
+      <h3>{view}</h3>
       <section id="section1">
         <p>
           The code button will redirect you to github where you can view all the
