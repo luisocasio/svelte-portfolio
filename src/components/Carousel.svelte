@@ -68,22 +68,22 @@
   }
 
   #previous {
-    width: 50px;
-    padding: 3rem;
+    width: 35px;
+    padding: 0.5rem;
     z-index: 1;
   }
 
   #next {
-    width: 50px;
-    padding: 3rem;
+    width: 35px;
+    padding: 0.5rem;
     z-index: 1;
   }
 
   #project_buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    width: 50%;
+    width: 100%;
     height: 15%;
     margin-top: 0.5rem;
   }
