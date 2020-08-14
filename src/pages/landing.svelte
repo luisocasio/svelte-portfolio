@@ -10,7 +10,7 @@
 <style>
   #banner-section {
     width: 100%;
-    height: 500px;
+    height: 650px;
   }
   #banner {
     width: 100%;
