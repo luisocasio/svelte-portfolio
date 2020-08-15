@@ -7,7 +7,7 @@
     text-decoration: underline;
   }
   #nav-bar {
-    background-color: #21367f;
+    background-color: #15202b;
     height: 95px;
     display: flex;
     align-items: center;

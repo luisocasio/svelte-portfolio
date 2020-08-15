@@ -7,4 +7,3 @@
 </style>
 
 <img id="header" {src} alt="blue-header" />
-<section id="about" />

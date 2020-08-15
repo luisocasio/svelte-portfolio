@@ -43,39 +43,47 @@
 </script>
 
 <style>
-  #project-title {
-    text-align: center;
-    color: #000;
-  }
   #carousel-wrapper {
-    height: 650px;
     display: flex;
     width: 100%;
-    background-color: #2dfafc;
+    background-color: #15202b;
   }
   #carousel {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
-
+    justify-content: space-between;
     align-items: center;
   }
   #carousel-slides {
-    width: 50%;
-    height: 450px;
-    padding: 0.5rem;
+    width: 100%;
+    height: 100%;
     border-radius: 5px;
+    margin-top: 1rem;
+  }
+
+  #previous_wrapper {
+    background-color: #21367f;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   #previous {
-    width: 35px;
-    padding: 0.5rem;
+    width: 48px;
     z-index: 1;
   }
 
+  #next_wrapper {
+    background-color: #21367f;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   #next {
-    width: 35px;
-    padding: 0.5rem;
+    width: 48px;
     z-index: 1;
   }
 
@@ -117,11 +125,11 @@
     justify-content: space-evenly;
     border-left: 2px solid #d617bd;
     padding: 1.5rem;
-    color: #000;
     align-items: center;
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-left: 1rem;
   }
   #section1 {
     border-bottom: 2px solid #d617bd;
@@ -137,17 +145,15 @@
   }
 </style>
 
-<section id="project-title">
-  <img id="header" {src} alt="blue-header" />
-</section>
-
 <div id="carousel-wrapper">
   <div id="carousel">
-    <img
-      id="previous"
-      alt="go-back-arrow"
-      src={previousSlide}
-      on:click={previous} />
+    <div id="previous_wrapper">
+      <img
+        id="previous"
+        alt="go-back-arrow"
+        src={previousSlide}
+        on:click={previous} />
+    </div>
     {#each [Projects[index]] as src (index)}
       <img
         id="carousel-slides"
@@ -155,7 +161,6 @@
         {src}
         in:fly={{ x: -2000, duration: 2000 }} />
     {/each}
-    <img id="next" alt="next-arrow" src={nextSlide} on:click={next} />
   </div>
 
   <div id="text-wrapper">
@@ -183,5 +188,8 @@
         </button>
       </div>
     </div>
+  </div>
+  <div id="next_wrapper">
+    <img id="next" alt="next-arrow" src={nextSlide} on:click={next} />
   </div>
 </div>
