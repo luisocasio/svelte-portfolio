@@ -44,6 +44,7 @@
 
 <style>
   #carousel-wrapper {
+    height: 650px;
     display: flex;
     width: 100%;
     background-color: #15202b;
