@@ -52,14 +52,16 @@
   #carousel {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
   #carousel-slides {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 60%;
     border-radius: 5px;
     margin-top: 1rem;
+    display: flex;
+    align-items: center;
   }
 
   #previous_wrapper {
@@ -147,14 +149,15 @@
 </style>
 
 <div id="carousel-wrapper">
+  <div id="previous_wrapper">
+    <img
+      id="previous"
+      alt="go-back-arrow"
+      src={previousSlide}
+      on:click={previous} />
+  </div>
   <div id="carousel">
-    <div id="previous_wrapper">
-      <img
-        id="previous"
-        alt="go-back-arrow"
-        src={previousSlide}
-        on:click={previous} />
-    </div>
+
     {#each [Projects[index]] as src (index)}
       <img
         id="carousel-slides"
