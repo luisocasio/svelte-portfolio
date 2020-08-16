@@ -2,6 +2,7 @@
   import Carousel from "../components/Carousel.svelte";
   import About from "../components/About.svelte";
   import Footer from "../components/Footer.svelte";
+  import NavBar from "../components/NavBar.svelte";
 
   let src = "assets/denverBanner.png";
   let desc = "art-work";
@@ -34,9 +35,10 @@
   }
 </style>
 
-<main id="banner-section">
+<NavBar />
+<section id="banner-section">
   <img id="banner" alt={desc} {src} />
-</main>
+</section>
 
 <section id="intro_title">
   <div id="tech-icons">

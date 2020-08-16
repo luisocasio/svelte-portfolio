@@ -1,42 +1,179 @@
 <script>
+  import { onMount } from "svelte";
   import { Router, link } from "svelte-routing";
+
+  let showMobileMenu = false;
+
+  const navItems = [
+    { label: "Home", href: "#" },
+    // { label: "Item 1", href: "#" },
+    // { label: "Item 2", href: "#" },
+    // { label: "Item 3", href: "#" },
+    // { label: "Item 4", href: "#" },
+    { label: "Skills", href: "#" },
+    { label: "Projects", href: "#" },
+    { label: "Contact", href: "#" },
+  ];
+
+  // Mobile menu click event handler
+  const handleMobileIconClick = () => (showMobileMenu = !showMobileMenu);
+
+  // Media match query handler
+  const mediaQueryHandler = (e) => {
+    // Reset mobile state
+    if (!e.matches) {
+      showMobileMenu = false;
+    }
+  };
+
+  // Attach media query listener on mount hook
+  onMount(() => {
+    const mediaListener = window.matchMedia("(max-width: 767px)");
+
+    mediaListener.addListener(mediaQueryHandler);
+  });
 </script>
 
 <style>
-  #nav-bar {
+  nav {
     background-color: #15202b;
-    height: 95px;
-    display: flex;
-    align-items: center;
+    height: 45px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
   }
-  #nav-items {
+
+  .inner {
+    max-width: 980px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+    box-sizing: border-box;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    list-style-type: none;
-    width: 100%;
     height: 100%;
+    justify-content: flex-end;
+    justify-content: space-between;
   }
-  #route-links {
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
+
+  .mobile-icon {
+    width: 25px;
+    height: 14px;
+    position: relative;
+    cursor: pointer;
   }
-  #title {
-    text-decoration: underline;
+
+  .mobile-icon:after,
+  .mobile-icon:before,
+  .middle-line {
+    content: "";
+    position: absolute;
     width: 100%;
-    text-align: center;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.4s;
+    transform-origin: center;
+  }
+
+  .mobile-icon:before,
+  .middle-line {
+    top: 0;
+  }
+
+  .mobile-icon:after,
+  .middle-line {
+    bottom: 0;
+  }
+
+  .mobile-icon:before {
+    width: 66%;
+  }
+
+  .mobile-icon:after {
+    width: 33%;
+  }
+
+  .middle-line {
+    margin: auto;
+  }
+
+  .mobile-icon:hover:before,
+  .mobile-icon:hover:after,
+  .mobile-icon.active:before,
+  .mobile-icon.active:after,
+  .mobile-icon.active .middle-line {
+    width: 100%;
+  }
+
+  .mobile-icon.active:before,
+  .mobile-icon.active:after {
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+
+  .mobile-icon.active .middle-line {
+    transform: rotate(45deg);
+  }
+
+  .navbar-list {
+    display: none;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 40px;
+  }
+
+  .navbar-list.mobile {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    display: block;
+    height: calc(100% - 45px);
+    bottom: 0;
+    left: 0;
+  }
+
+  .navbar-list li {
+    list-style-type: none;
+    position: relative;
+  }
+
+  .navbar-list li:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #424245;
+  }
+
+  .navbar-list a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    height: 45px;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 13px;
+    width: 86.5%;
+    justify-content: flex-end;
   }
 </style>
 
-<nav id="nav-bar">
-  <ul id="nav-items">
-    <a id="title" href="/">Full stack web developer</a>
-    <li id="route-links">
-      <a href="/skills">SKILLS</a>
-      <a href="/project">PROJECTS</a>
-      <a href="/contact">CONTACT</a>
-    </li>
-  </ul>
+<nav>
+  <div class="inner">
+    <h5>Full stack web developer</h5>
+    <div
+      on:click={handleMobileIconClick}
+      class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
+      <div class="middle-line" />
+    </div>
+    <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
+      {#each navItems as item}
+        <li>
+          <a href={item.href}>{item.label}</a>
+        </li>
+      {/each}
+    </ul>
+  </div>
 </nav>
