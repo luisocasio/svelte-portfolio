@@ -58,7 +58,7 @@
   <h1 id="about_title">About Me</h1>
 
   <button id="resume_button">
-    <p>Resume</p>
+    <a href="https://resume.creddle.io/resume/63v349pbnj3">Resume</a>
   </button>
 
 </div>
