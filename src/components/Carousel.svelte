@@ -99,17 +99,16 @@
 
   #project_buttons {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 15%;
     margin-top: 0.5rem;
   }
   #code {
     background-color: #21367f;
     color: #fff;
     border: 4px solid #2dfafc;
-    width: 90px;
+    width: 130px;
     height: 32.5px;
     text-decoration: none;
     border-radius: 35px;
@@ -119,7 +118,7 @@
     color: #fff;
     border: 4px solid #2dfafc;
     background-color: #15202b;
-    width: 90px;
+    width: 130px;
     height: 32.5px;
     text-decoration: none;
     border-radius: 35px;

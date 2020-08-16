@@ -9,6 +9,7 @@
     background-color: #15202b;
     display: flex;
     align-items: center;
+    border-bottom: 2px solid gray;
   }
 
   #about_content {
@@ -42,7 +43,7 @@
     top: 50%;
     right: 16px;
     transform: translate(-50%, -50%);
-    background-color: #2dfafc;
+    background-color: #00add8;
     color: #fff;
     width: 130px;
     height: 32.5px;
