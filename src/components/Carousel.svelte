@@ -52,12 +52,17 @@
   #carousel {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  #slide_title {
+    display: flex;
     align-items: center;
   }
+
   #carousel-slides {
-    width: 50%;
-    height: 60%;
+    width: 80%;
     border-radius: 5px;
     margin-top: 1rem;
     display: flex;
@@ -70,6 +75,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 10rem;
   }
 
   #previous {
@@ -83,6 +89,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 10rem;
   }
 
   #next {
@@ -121,6 +128,7 @@
   #text-wrapper {
     display: flex;
     justify-content: flex-end;
+    width: 100%;
   }
   #text-section {
     display: flex;
@@ -139,12 +147,21 @@
     height: 50%;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    font-size: small;
+    justify-content: space-between;
   }
   #section2 {
     border-bottom: 2px solid #d617bd;
     height: 50%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    font-size: small;
+    justify-content: space-between;
+    width: 100%;
+  }
+  #stack_list {
+    text-align: left;
   }
 </style>
 
@@ -156,7 +173,9 @@
       src={previousSlide}
       on:click={previous} />
   </div>
+
   <div id="carousel">
+    <h5 id="slide_title">{view}</h5>
 
     {#each [Projects[index]] as src (index)}
       <img
@@ -169,18 +188,29 @@
 
   <div id="text-wrapper">
     <div id="text-section">
-      <h3>{view}</h3>
       <section id="section1">
+        <h5>About this project</h5>
         <p>
-          The code button will redirect you to github where you can view all the
-          code for a specific project
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
+          soluta quis impedit itaque nisi a est. Quaerat, quia libero vitae ex
+          rerum, voluptas dignissimos nam sapiente, eveniet inventore aspernatur
+          ipsam.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
+          soluta quis impedit itaque nisi a est. Quaerat, quia libero vitae ex
+          rerum, voluptas dignissimos nam sapiente, eveniet inventore aspernatur
+          ipsam.
         </p>
       </section>
       <section id="section2">
-        <p>
-          The view button will redirect you to the deployed site of a specific
-          project
-        </p>
+        <h5>Tech Stack</h5>
+        <ul id="stack_list">
+          <li>Gatsby</li>
+          <li>AWS Services</li>
+          <li>Node</li>
+          <li>GraphQl</li>
+        </ul>
       </section>
 
       <div id="project_buttons">

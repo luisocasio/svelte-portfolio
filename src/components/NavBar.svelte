@@ -3,9 +3,6 @@
 </script>
 
 <style>
-  #title {
-    text-decoration: underline;
-  }
   #nav-bar {
     background-color: #15202b;
     height: 95px;
@@ -19,31 +16,34 @@
     list-style-type: none;
     width: 100%;
   }
-  #nav-links {
-    width: 25%;
-    text-align: center;
-  }
-
   #route-links {
     display: flex;
-    justify-content: space-evenly;
-    width: 50%;
-    font-size: 1.25rem;
+    justify-content: space-around;
+    width: 100%;
+  }
+  #title {
+    text-decoration: underline;
   }
 </style>
 
 <nav id="nav-bar">
   <ul id="nav-items">
-    <li id="nav-links">
-      <a href="/">
-        <h5 id="title">FULL STACK WEB DEVELOPER</h5>
-      </a>
-    </li>
-
     <li id="route-links">
-      <a href="/skills">SKILLS</a>
-      <a href="/project">PROJECTS</a>
-      <a href="/contact">CONTACT</a>
+      <h5 id="title">
+        <a href="/">Full stack web developer</a>
+      </h5>
+
+      <h5>
+        <a href="/skills">SKILLS</a>
+      </h5>
+
+      <h5>
+        <a href="/project">PROJECTS</a>
+      </h5>
+
+      <h5>
+        <a href="/contact">CONTACT</a>
+      </h5>
     </li>
   </ul>
 </nav>
