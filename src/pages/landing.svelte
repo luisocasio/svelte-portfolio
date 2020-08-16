@@ -22,6 +22,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    font-size: small;
   }
 </style>
 
@@ -30,9 +31,9 @@
 </main>
 
 <section id="intro_title">
-  <h5>Javascript</h5>
-  <h5>React</h5>
-  <h5>Python</h5>
+  <p>Javascript</p>
+  <p>React</p>
+  <p>Python</p>
 </section>
 <Carousel />
 <About />

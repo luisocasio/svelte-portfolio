@@ -50,24 +50,18 @@
     background-color: #15202b;
   }
   #carousel {
+    height: 100%;
     width: 100%;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
     flex-direction: column;
-  }
-  #slide_title {
-    display: flex;
+    justify-content: space-evenly;
     align-items: center;
   }
 
   #carousel-slides {
-    width: 100%;
-    margin-left: 1rem;
+    width: 80%;
     border-radius: 5px;
-    margin-top: 1rem;
-    display: flex;
-    align-items: center;
+    height: 80%;
   }
 
   #previous_wrapper {
@@ -100,42 +94,41 @@
 
   #project_buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
   }
   #code {
     background-color: #21367f;
     color: #fff;
-    border: 4px solid #2dfafc;
+    border: 2px solid #2dfafc;
     width: 130px;
     height: 32.5px;
     text-decoration: none;
     border-radius: 35px;
-    font-size: 1rem;
+    font-size: small;
   }
   #view {
     color: #fff;
-    border: 4px solid #2dfafc;
-    background-color: #15202b;
+    border: 2px solid #2dfafc;
+    background-color: #21367f;
     width: 130px;
     height: 32.5px;
     text-decoration: none;
     border-radius: 35px;
-    font-size: 1rem;
+    font-size: small;
   }
   #text-wrapper {
     display: flex;
     justify-content: flex-end;
     width: 100%;
+    border-left: 2px solid #d617bd;
   }
   #text-section {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    border-left: 2px solid #d617bd;
-    padding: 1.5rem;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     margin-top: 1rem;
@@ -146,23 +139,25 @@
     border-bottom: 2px solid #d617bd;
     height: 50%;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    font-size: medium;
-    justify-content: space-between;
+    font-size: small;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
   }
   #section2 {
     border-bottom: 2px solid #d617bd;
     height: 50%;
     display: flex;
     flex-direction: column;
-    font-size: medium;
-    justify-content: space-between;
+    font-size: small;
+    justify-content: space-around;
     width: 100%;
   }
   #stack_list {
     text-align: left;
     height: 50%;
+    font-size: medium;
   }
 </style>
 

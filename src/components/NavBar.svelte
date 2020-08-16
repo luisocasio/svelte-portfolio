@@ -11,39 +11,32 @@
   }
   #nav-items {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     list-style-type: none;
     width: 100%;
+    height: 100%;
   }
   #route-links {
+    width: 50%;
     display: flex;
     justify-content: space-around;
-    width: 100%;
   }
   #title {
     text-decoration: underline;
+    width: 100%;
+    text-align: center;
   }
 </style>
 
 <nav id="nav-bar">
   <ul id="nav-items">
+    <a id="title" href="/">Full stack web developer</a>
     <li id="route-links">
-      <h5 id="title">
-        <a href="/">Full stack web developer</a>
-      </h5>
-
-      <h5>
-        <a href="/skills">SKILLS</a>
-      </h5>
-
-      <h5>
-        <a href="/project">PROJECTS</a>
-      </h5>
-
-      <h5>
-        <a href="/contact">CONTACT</a>
-      </h5>
+      <a href="/skills">SKILLS</a>
+      <a href="/project">PROJECTS</a>
+      <a href="/contact">CONTACT</a>
     </li>
   </ul>
 </nav>
