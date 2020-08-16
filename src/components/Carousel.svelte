@@ -181,7 +181,7 @@
         id="carousel-slides"
         alt={name}
         {src}
-        in:fly={{ x: -2000, duration: 2000 }} />
+        in:fly={{ x: -50, duration: 2000 }} />
     {/each}
   </div>
 
