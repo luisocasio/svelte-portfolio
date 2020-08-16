@@ -75,7 +75,7 @@
     <a href="/">Submit</a>
   </button>
   Follow me across these social media platforms.
-  <div>
+  <div id="social-media-icons">
     <a href="https://www.instagram.com/fullstack_og/" alt="social-media-icon">
       <img
         src="https://img.icons8.com/fluent/48/000000/instagram-new.png"
@@ -91,6 +91,9 @@
         src="https://img.icons8.com/office/48/000000/linkedin.png"
         alt="linkedin-logo" />
     </a>
-
   </div>
+  <a href="https://fullstackog.com/" alt="blog-site">
+    <p>🚧Checkout My Blog Site🚧</p>
+
+  </a>
 </footer>
