@@ -151,13 +151,16 @@
     display: flex;
     flex-direction: column;
     font-size: small;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
   }
   #stack_list {
     text-align: left;
     height: 50%;
-    font-size: medium;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 </style>
 
@@ -200,7 +203,7 @@
         </p>
       </section>
       <section id="section2">
-        <h5>Tech Stack</h5>
+        <h5>Tech Stack used</h5>
         <ul id="stack_list">
           <li>Gatsby</li>
           <li>AWS Services</li>
