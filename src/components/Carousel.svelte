@@ -62,7 +62,8 @@
   }
 
   #carousel-slides {
-    width: 80%;
+    width: 100%;
+    margin-left: 1rem;
     border-radius: 5px;
     margin-top: 1rem;
     display: flex;
@@ -147,7 +148,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    font-size: small;
+    font-size: medium;
     justify-content: space-between;
   }
   #section2 {
@@ -155,12 +156,13 @@
     height: 50%;
     display: flex;
     flex-direction: column;
-    font-size: small;
+    font-size: medium;
     justify-content: space-between;
     width: 100%;
   }
   #stack_list {
     text-align: left;
+    height: 50%;
   }
 </style>
 
