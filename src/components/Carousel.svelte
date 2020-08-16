@@ -131,9 +131,7 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 1rem;
+    margin: 1rem 1rem 1rem 1rem;
   }
   #section1 {
     border-bottom: 2px solid #d617bd;
