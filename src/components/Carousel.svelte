@@ -61,7 +61,7 @@
   #carousel-slides {
     width: 80%;
     border-radius: 5px;
-    height: 80%;
+    height: 85%;
   }
 
   #previous_wrapper {
