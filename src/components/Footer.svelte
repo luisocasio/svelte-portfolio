@@ -7,7 +7,7 @@
     bottom: 0;
     width: 100%;
     height: 550px;
-    background-color: #00add8;
+    background-color: #15202b;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -31,7 +31,7 @@
     position: relative;
     text-align: center;
     color: white;
-    background-color: #00add8;
+    background-color: #15202b;
   }
   #header_title {
     position: absolute;
