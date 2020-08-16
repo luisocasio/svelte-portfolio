@@ -23,7 +23,7 @@
     width: 130px;
     height: 32.5px;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: small;
     background-color: #21367f;
     color: #fff;
   }
@@ -47,7 +47,7 @@
   #main_form {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
   }
   #main_input {
     height: 250px;
@@ -69,10 +69,28 @@
 
   <form id="main_form">
     <input id="main_input" type="main_input" placeholder="message" />
+
   </form>
-
   <button>
-    <a href="/">SUBMIT</a>
+    <a href="/">Submit</a>
   </button>
+  Follow me across these social media platforms.
+  <div>
+    <a href="https://www.instagram.com/fullstack_og/" alt="social-media-icon">
+      <img
+        src="https://img.icons8.com/fluent/48/000000/instagram-new.png"
+        alt="instagram-logo" />
+    </a>
+    <a href="https://twitter.com/FullstackOg" alt="social-media-icon">
+      <img
+        src="https://img.icons8.com/fluent/48/000000/twitter.png"
+        alt="twitter-logo" />
+    </a>
+    <a href="https://www.linkedin.com/in/ocasio-perez/" alt="social-media-icon">
+      <img
+        src="https://img.icons8.com/office/48/000000/linkedin.png"
+        alt="linkedin-logo" />
+    </a>
 
+  </div>
 </footer>
