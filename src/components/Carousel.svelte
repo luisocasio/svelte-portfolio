@@ -43,13 +43,13 @@
 </script>
 
 <style>
-  #carousel-wrapper {
+  #carousel {
     height: 650px;
     display: flex;
     width: 100%;
     background-color: #15202b;
   }
-  #carousel {
+  .slide {
     height: 100%;
     width: 100%;
     display: flex;
@@ -58,13 +58,13 @@
     align-items: center;
   }
 
-  #carousel-slides {
+  .carousel-image {
     width: 80%;
     border-radius: 5px;
     height: 85%;
   }
 
-  #previous_wrapper {
+  .previous_wrapper {
     background-color: #21367f;
     height: 100%;
     display: flex;
@@ -73,12 +73,12 @@
     width: 10rem;
   }
 
-  #previous {
+  .previous {
     width: 48px;
     z-index: 1;
   }
 
-  #next_wrapper {
+  .next_wrapper {
     background-color: #21367f;
     height: 100%;
     display: flex;
@@ -87,19 +87,19 @@
     width: 10rem;
   }
 
-  #next {
+  .next {
     width: 48px;
     z-index: 1;
   }
 
-  #project_buttons {
+  .project_buttons {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     margin-top: 1.5rem;
   }
-  #code {
+  .code {
     background-color: #21367f;
     color: #fff;
     border: 2px solid #2dfafc;
@@ -109,7 +109,7 @@
     border-radius: 35px;
     font-size: small;
   }
-  #view {
+  .view {
     color: #fff;
     border: 2px solid #2dfafc;
     background-color: #21367f;
@@ -119,13 +119,13 @@
     border-radius: 35px;
     font-size: small;
   }
-  #text-wrapper {
+  .text-wrapper {
     display: flex;
     justify-content: flex-end;
     width: 100%;
     border-left: 2px solid #d617bd;
   }
-  #text-section {
+  .text-section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -133,7 +133,7 @@
     text-align: center;
     margin: 1rem 1rem 1rem 1rem;
   }
-  #section1 {
+  .section {
     border-bottom: 2px solid #d617bd;
     height: 50%;
     display: flex;
@@ -142,17 +142,9 @@
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
+    text-align: left;
   }
-  #section2 {
-    border-bottom: 2px solid #d617bd;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    font-size: small;
-    justify-content: space-evenly;
-    width: 100%;
-  }
-  #stack_list {
+  .stack_list {
     text-align: left;
     height: 50%;
     font-size: small;
@@ -162,30 +154,30 @@
   }
 </style>
 
-<div id="carousel-wrapper">
-  <div id="previous_wrapper">
+<div id="carousel">
+  <div class="previous_wrapper">
     <img
-      id="previous"
+      class="previous"
       alt="go-back-arrow"
       src={previousSlide}
       on:click={previous} />
   </div>
 
-  <div id="carousel">
-    <h5 id="slide_title">{view}</h5>
+  <div class="slide">
+    <h5 class="slide_title">{view}</h5>
 
     {#each [Projects[index]] as src (index)}
       <img
-        id="carousel-slides"
+        class="carousel-image"
         alt={name}
         {src}
         in:fly={{ x: -50, duration: 2000 }} />
     {/each}
   </div>
 
-  <div id="text-wrapper">
-    <div id="text-section">
-      <section id="section1">
+  <div class="text-wrapper">
+    <div class="text-section">
+      <section class="section">
         <h5>About this project</h5>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
@@ -200,9 +192,9 @@
           ipsam.
         </p>
       </section>
-      <section id="section2">
+      <section class="section">
         <h5>Tech Stack used</h5>
-        <ul id="stack_list">
+        <ul class="stack_list">
           <li>Gatsby</li>
           <li>AWS Services</li>
           <li>Node</li>
@@ -210,17 +202,17 @@
         </ul>
       </section>
 
-      <div id="project_buttons">
-        <button id="code">
-          <a href={gits}>Code</a>
-        </button>
-        <button id="view">
-          <a href={url}>View</a>
-        </button>
+      <div class="project_buttons">
+        <a href={gits}>
+          <button class="code">Code</button>
+        </a>
+        <a href={url}>
+          <button class="view">View</button>
+        </a>
       </div>
     </div>
   </div>
-  <div id="next_wrapper">
-    <img id="next" alt="next-arrow" src={nextSlide} on:click={next} />
+  <div class="next_wrapper">
+    <img class="next" alt="next-arrow" src={nextSlide} on:click={next} />
   </div>
 </div>

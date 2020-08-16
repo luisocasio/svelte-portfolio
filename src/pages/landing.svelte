@@ -12,14 +12,14 @@
   li {
     list-style-type: none;
   }
-  #banner-section {
+  .banner-section {
     height: 650px;
   }
-  #banner {
+  .banner {
     width: 100%;
     height: 100%;
   }
-  #tech-icons {
+  .tech-icons {
     background-color: #15202b;
     border-bottom: 2px solid gray;
     height: 95px;
@@ -28,7 +28,7 @@
     justify-content: space-around;
     font-size: small;
   }
-  #icon-container {
+  .icon-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,44 +36,43 @@
 </style>
 
 <NavBar />
-<section id="banner-section">
-  <img id="banner" alt={desc} {src} />
-</section>
+<div class="banner-section">
+  <img class="banner" alt={desc} {src} />
+</div>
 
-<section id="intro_title">
-  <div id="tech-icons">
-    <section id="icon-container">
-      <img
-        src="https://img.icons8.com/color/48/000000/javascript.png"
-        alt="javascript-logo" />
-      <li>JavaScript</li>
-    </section>
-    <section id="icon-container">
-      <img
-        src="https://img.icons8.com/color/48/000000/react-native.png"
-        alt="react-logo" />
-      <li>React</li>
-    </section>
-    <section id="icon-container">
-      <img
-        src="https://img.icons8.com/doodle/48/000000/svetle.png"
-        alt="svelte-log" />
-      <li>Svelte</li>
-    </section>
-    <section id="icon-container">
-      <img
-        src="https://img.icons8.com/color/48/000000/graphql.png"
-        alt="graphql-logo" />
-      <li>graphql</li>
-    </section>
-    <section id="icon-container">
-      <img
-        src="https://img.icons8.com/color/48/000000/python.png"
-        alt="python-logo" />
-      <li>Python</li>
-    </section>
+<div class="tech-icons">
+  <div class="icon-container">
+    <img
+      src="https://img.icons8.com/color/48/000000/javascript.png"
+      alt="javascript-logo" />
+    <li>JavaScript</li>
   </div>
-</section>
+  <div class="icon-container">
+    <img
+      src="https://img.icons8.com/color/48/000000/react-native.png"
+      alt="react-logo" />
+    <li>React</li>
+  </div>
+  <div class="icon-container">
+    <img
+      src="https://img.icons8.com/doodle/48/000000/svetle.png"
+      alt="svelte-log" />
+    <li>Svelte</li>
+  </div>
+  <div class="icon-container">
+    <img
+      src="https://img.icons8.com/color/48/000000/graphql.png"
+      alt="graphql-logo" />
+    <li>graphql</li>
+  </div>
+  <div class="icon-container">
+    <img
+      src="https://img.icons8.com/color/48/000000/python.png"
+      alt="python-logo" />
+    <li>Python</li>
+  </div>
+</div>
+
 <Carousel />
 <About />
 <Footer />
