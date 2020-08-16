@@ -214,10 +214,10 @@
 
       <div id="project_buttons">
         <button id="code">
-          <a href={gits}>CODE</a>
+          <a href={gits}>Code</a>
         </button>
         <button id="view">
-          <a href={url}>VIEW</a>
+          <a href={url}>View</a>
         </button>
       </div>
     </div>
