@@ -17,11 +17,12 @@
     height: 48px;
     width: 250px;
     border-radius: 5px;
+    text-align: center;
   }
   button {
     width: 130px;
     height: 32.5px;
-    border-radius: 38px;
+    border-radius: 5px;
     font-size: 1rem;
     background-color: #21367f;
     color: #fff;
@@ -62,8 +63,8 @@
 <footer>
   <form id="contact_form">
     <input type="name" placeholder="name" />
-    <input type="name" placeholder="email" />
-    <input type="name" placeholder="phone" />
+    <input type="email" placeholder="email" />
+    <input type="phone" placeholder="phone" />
   </form>
 
   <form id="main_form">
