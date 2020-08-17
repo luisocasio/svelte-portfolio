@@ -1,7 +1,7 @@
 <script>
   import Carousel from "../components/Carousel.svelte";
   import About from "../components/About.svelte";
-  import Footer from "../components/Footer.svelte";
+  import Contact from "../components/Contact.svelte";
   import NavBar from "../components/NavBar.svelte";
 
   let src = "assets/denverBanner.png";
@@ -14,6 +14,8 @@
   }
   .banner-section {
     height: 650px;
+
+
   }
   .banner {
     width: 100%;
@@ -22,20 +24,26 @@
   .tech-icons {
     background-color: #15202b;
     border-bottom: 2px solid gray;
-    height: 95px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    font-size: small;
+    font-size: large;
+    padding: 1.5rem;
+
   }
   .icon-container {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 5%;
     align-items: center;
+
   }
 </style>
 
-<NavBar />
+<NavBar id='nav_bar'/>
 <div class="banner-section">
   <img class="banner" alt={desc} {src} />
 </div>
@@ -75,4 +83,4 @@
 
 <Carousel />
 <About />
-<Footer />
+<Contact />

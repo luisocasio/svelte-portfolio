@@ -49,19 +49,28 @@
     width: 100%;
     background-color: #15202b;
   }
+
   .slide {
-    height: 100%;
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    height: 90%;
+    padding: 1rem;
+  }
+
+  .slide_title {
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 12.5%;
   }
 
   .carousel-image {
     width: 80%;
-    border-radius: 5px;
-    height: 85%;
+    height: 75%;
   }
 
   .previous_wrapper {
@@ -70,12 +79,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 10rem;
+    width: 5%;
   }
 
   .previous {
-    width: 48px;
+    width: 60px;
     z-index: 1;
+    padding: 0.5rem;
   }
 
   .next_wrapper {
@@ -84,12 +94,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 10rem;
+    width: 5%;
   }
 
   .next {
-    width: 48px;
+    width: 60px;
     z-index: 1;
+    padding: 0.5rem;
   }
 
   .project_buttons {
@@ -97,7 +108,7 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
   }
   .code {
     background-color: #21367f;
@@ -122,35 +133,51 @@
   .text-wrapper {
     display: flex;
     justify-content: flex-end;
-    width: 100%;
+    width: 50%;
     border-left: 2px solid #d617bd;
+    padding: 3rem;
   }
   .text-section {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    margin: 1rem 1rem 1rem 1rem;
   }
   .section {
-    border-bottom: 2px solid #d617bd;
-    height: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     font-size: small;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
     text-align: left;
+    border-bottom: 2px solid #d617bd;
+  }
+  .section_paragraph {
+    margin-bottom: 1rem;
+  }
+  .section_title {
+    height: 50%;
+    display: flex;
+    align-items: center;
   }
   .stack_list {
     text-align: left;
-    height: 50%;
+    width: 100%;
+    height: 60%;
     font-size: small;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    align-items: center;
+  }
+
+  .stack_list_wrapper {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
   }
 </style>
 
@@ -159,60 +186,64 @@
     <img
       class="previous"
       alt="go-back-arrow"
-      src={previousSlide}
-      on:click={previous} />
+      src="{previousSlide}"
+      on:click="{previous}"
+    />
   </div>
 
   <div class="slide">
-    <h5 class="slide_title">{view}</h5>
+    <section class="slide_title">
+      <h5>{view}</h5>
+    </section>
 
-    {#each [Projects[index]] as src (index)}
-      <img
-        class="carousel-image"
-        alt={name}
-        {src}
-        in:fly={{ x: -50, duration: 2000 }} />
-    {/each}
+    {#each [Projects[index]] as src (index)} <img class="carousel-image"
+    alt={name} {src} in:fly={{ x: -50, duration: 2000 }} /> {/each}
   </div>
 
   <div class="text-wrapper">
     <div class="text-section">
       <section class="section">
-        <h5>About this project</h5>
-        <p>
+        <h5 class="section_title">About this project</h5>
+        <p class="section_paragraph">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
           soluta quis impedit itaque nisi a est. Quaerat, quia libero vitae ex
           rerum, voluptas dignissimos nam sapiente, eveniet inventore aspernatur
-          ipsam.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
-          soluta quis impedit itaque nisi a est. Quaerat, quia libero vitae ex
-          rerum, voluptas dignissimos nam sapiente, eveniet inventore aspernatur
-          ipsam.
+          ipsam. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Maxime soluta quis impedit itaque nisi a est. Quaerat, quia libero
+          vitae ex rerum, voluptas dignissimos nam sapiente, eveniet inventore
+          aspernatur ipsam.
         </p>
       </section>
+
       <section class="section">
-        <h5>Tech Stack used</h5>
-        <ul class="stack_list">
-          <li>Gatsby</li>
-          <li>AWS Services</li>
-          <li>Node</li>
-          <li>GraphQl</li>
-        </ul>
+        <h5 class="section_title">Tech Stack used</h5>
+        <div class="stack_list_wrapper">
+          <ul class="stack_list">
+            <li>Gatsby</li>
+            <li>AWS Services</li>
+            <li>Node</li>
+            <li>GraphQl</li>
+          </ul>
+          <ul class="stack_list">
+            <li>Gatsby</li>
+            <li>AWS Services</li>
+            <li>Node</li>
+            <li>GraphQl</li>
+          </ul>
+        </div>
       </section>
 
       <div class="project_buttons">
-        <a href={gits}>
+        <a href="{gits}">
           <button class="code">Code</button>
         </a>
-        <a href={url}>
+        <a href="{url}">
           <button class="view">View</button>
         </a>
       </div>
     </div>
   </div>
   <div class="next_wrapper">
-    <img class="next" alt="next-arrow" src={nextSlide} on:click={next} />
+    <img class="next" alt="next-arrow" src="{nextSlide}" on:click="{next}" />
   </div>
 </div>

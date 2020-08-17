@@ -6,7 +6,7 @@
   footer {
     bottom: 0;
     width: 100%;
-    height: 550px;
+    height: 650px;
     background-color: #15202b;
     display: flex;
     flex-direction: column;
@@ -43,11 +43,13 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+    padding: 2rem;
   }
   #message_form {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    padding: 2rem;
   }
   #message_input {
     height: 250px;
@@ -81,17 +83,20 @@
     <a href="https://www.instagram.com/fullstack_og/" alt="social-media-icon">
       <img
         src="https://img.icons8.com/fluent/48/000000/instagram-new.png"
-        alt="instagram-logo" />
+        alt="instagram-logo"
+      />
     </a>
     <a href="https://twitter.com/FullstackOg" alt="social-media-icon">
       <img
         src="https://img.icons8.com/fluent/48/000000/twitter.png"
-        alt="twitter-logo" />
+        alt="twitter-logo"
+      />
     </a>
     <a href="https://www.linkedin.com/in/ocasio-perez/" alt="social-media-icon">
       <img
         src="https://img.icons8.com/office/48/000000/linkedin.png"
-        alt="linkedin-logo" />
+        alt="linkedin-logo"
+      />
     </a>
   </div>
 
@@ -100,5 +105,4 @@
       <p>🚧Checkout My Blog Site🚧</p>
     </a>
   </div>
-
 </footer>
