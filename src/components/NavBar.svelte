@@ -36,10 +36,11 @@
     position: sticky;
     top: 0;
     z-index: 2;
+    padding: 1rem;
   }
 
   .inner {
-    max-width: 980px;
+    max-width: 1100px;
     padding-left: 20px;
     padding-right: 20px;
     margin: auto;
