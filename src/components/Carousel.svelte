@@ -22,12 +22,35 @@
     { MarketAve: "https://github.com/Lambda-School-Labs/quick-street-be" },
   ];
 
+  const about = [
+    {
+      jaemsounds:
+        "A Headless WordPress site created for a client in the music industry. This client wanted his music to be streamed and downloaded across various types of devices.   ",
+    },
+    {
+      latteluv:
+        "Single page application that gives its user a fast and snappy feel. This is possible because we are rendering our components and not having to retrieve data from a server.",
+    },
+    {
+      marketavenue:
+        "During an 8 week period I worked along 5 other developers and a UX designer to create 'Market Ave.'. An application that brings local vendors and locals closer.",
+    },
+  ];
+
+  const tech = [
+    { jaemsounds: ["Gatsby", "WordPress", "Graphql", "AWS amplify"] },
+    { latteluv: ["React", "Sass"] },
+    { marketavenue: ["React", "Express", "Node", "MongoDB"] },
+  ];
+
   let index = 0;
   let slide = 0;
 
   $: view = Object.keys(projectSite[slide]);
   $: url = Object.values(projectSite[slide]);
   $: gits = Object.values(git[slide]);
+  $: abouts = Object.values(about[slide]);
+  $: techs = Object.values(tech[slide]);
 
   const next = () => {
     index = (index + 1) % Projects.length;
@@ -65,12 +88,11 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 12.5%;
   }
 
   .carousel-image {
     width: 80%;
-    height: 75%;
+    height: 85%;
   }
 
   .previous_wrapper {
@@ -135,11 +157,11 @@
     justify-content: flex-end;
     width: 50%;
     border-left: 2px solid #d617bd;
-    padding: 3rem;
   }
   .text-section {
     display: flex;
     flex-direction: column;
+    padding: 1rem;
   }
   .section {
     height: 100%;
@@ -149,35 +171,31 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    text-align: left;
+    text-align: center;
     border-bottom: 2px solid #d617bd;
   }
   .section_paragraph {
     margin-bottom: 1rem;
   }
   .section_title {
-    height: 50%;
     display: flex;
     align-items: center;
   }
+  .tech_title {
+    margin-top: 1rem;
+  }
   .stack_list {
-    text-align: left;
     width: 100%;
-    height: 60%;
-    font-size: small;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-left: 2rem;
-    margin-bottom: 1rem;
-    align-items: center;
+    justify-content: space-around;
+    font-size: small;
   }
 
   .stack_list_wrapper {
-    display: flex;
     height: 100%;
     width: 100%;
-    align-items: center;
   }
 </style>
 
@@ -205,30 +223,15 @@
       <section class="section">
         <h5 class="section_title">About this project</h5>
         <p class="section_paragraph">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
-          soluta quis impedit itaque nisi a est. Quaerat, quia libero vitae ex
-          rerum, voluptas dignissimos nam sapiente, eveniet inventore aspernatur
-          ipsam. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Maxime soluta quis impedit itaque nisi a est. Quaerat, quia libero
-          vitae ex rerum, voluptas dignissimos nam sapiente, eveniet inventore
-          aspernatur ipsam.
+          {abouts}
         </p>
       </section>
 
       <section class="section">
-        <h5 class="section_title">Tech Stack used</h5>
+        <h5 class="tech_title">Tech Stack used</h5>
         <div class="stack_list_wrapper">
           <ul class="stack_list">
-            <li>Gatsby</li>
-            <li>AWS Services</li>
-            <li>Node</li>
-            <li>GraphQl</li>
-          </ul>
-          <ul class="stack_list">
-            <li>Gatsby</li>
-            <li>AWS Services</li>
-            <li>Node</li>
-            <li>GraphQl</li>
+            <li>{techs}</li>
           </ul>
         </div>
       </section>
