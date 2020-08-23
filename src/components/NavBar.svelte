@@ -32,11 +32,10 @@
 <style>
   nav {
     background-color: #15202b;
-    height: 45px;
+    height: 75px;
     position: sticky;
     top: 0;
     z-index: 2;
-    padding: 1rem;
   }
 
   .inner {
@@ -123,7 +122,7 @@
     background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     display: block;
-    height: calc(100% - 45px);
+    height: calc(100% - 75px);
     bottom: 0;
     left: 0;
   }
