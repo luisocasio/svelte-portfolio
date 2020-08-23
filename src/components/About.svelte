@@ -44,7 +44,7 @@
     text-decoration: none;
     border-radius: 35px;
     font-size: small;
-    margin-right: 4rem;
+    margin-right: 2.25rem;
     border: 2px solid #2dfafc;
   }
 </style>
