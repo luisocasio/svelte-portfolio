@@ -9,20 +9,21 @@
     background-color: #15202b;
     display: flex;
     align-items: center;
-    border-bottom: 2px solid gray;
+    /* border-bottom: 2px solid gray; */
     justify-content: space-between;
     font-size: small;
   }
   .section {
     width: 50%;
     text-align: center;
+    padding: 3rem;
   }
   .about_header {
     position: relative;
     text-align: center;
     color: white;
     background-color: #15202b;
-    border-top: 2px solid gray;
+    /* border-top: 2px solid gray; */
   }
 
   .about_title {
@@ -44,7 +45,7 @@
     text-decoration: none;
     border-radius: 35px;
     font-size: small;
-    margin-right: 2.25rem;
+    margin-right: 1.8rem;
     border: 2px solid #2dfafc;
   }
 </style>

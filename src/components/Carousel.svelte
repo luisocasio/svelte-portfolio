@@ -66,21 +66,25 @@
 </script>
 
 <style>
-  #carousel {
+  .carousel_wrapper {
     height: 650px;
+  }
+
+  .carousel {
     display: flex;
+    height: 100%;
     width: 100%;
     background-color: #15202b;
   }
 
   .slide {
-    width: 50%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     height: 90%;
-    padding: 1rem;
+    padding: 1.5rem;
   }
 
   .slide_title {
@@ -101,11 +105,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 5%;
   }
 
   .previous {
-    width: 60px;
+    width: 40px;
     z-index: 1;
     padding: 0.5rem;
   }
@@ -116,11 +119,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 5%;
   }
 
   .next {
-    width: 60px;
+    width: 40px;
     z-index: 1;
     padding: 0.5rem;
   }
@@ -157,11 +159,11 @@
     justify-content: flex-end;
     width: 50%;
     border-left: 2px solid #d617bd;
+    padding: 1.5rem;
   }
   .text-section {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
   }
   .section {
     height: 100%;
@@ -175,7 +177,8 @@
     border-bottom: 2px solid #d617bd;
   }
   .section_paragraph {
-    margin-bottom: 1rem;
+    width: 100%;
+    height: 67%;
   }
   .section_title {
     display: flex;
@@ -199,54 +202,56 @@
   }
 </style>
 
-<div id="carousel">
-  <div class="previous_wrapper">
-    <img
-      class="previous"
-      alt="go-back-arrow"
-      src="{previousSlide}"
-      on:click="{previous}"
-    />
-  </div>
+<div class="carousel_wrapper">
+  <div class="carousel">
+    <div class="previous_wrapper">
+      <img
+        class="previous"
+        alt="go-back-arrow"
+        src="{previousSlide}"
+        on:click="{previous}"
+      />
+    </div>
 
-  <div class="slide">
-    <section class="slide_title">
-      <h5>{view}</h5>
-    </section>
-
-    {#each [Projects[index]] as src (index)} <img class="carousel-image"
-    alt={name} {src} in:fly={{ x: -50, duration: 2000 }} /> {/each}
-  </div>
-
-  <div class="text-wrapper">
-    <div class="text-section">
-      <section class="section">
-        <h5 class="section_title">About this project</h5>
-        <p class="section_paragraph">
-          {abouts}
-        </p>
+    <div class="slide">
+      <section class="slide_title">
+        <h5>{view}</h5>
       </section>
 
-      <section class="section">
-        <h5 class="tech_title">Tech Stack used</h5>
-        <div class="stack_list_wrapper">
-          <ul class="stack_list">
-            <li>{techs}</li>
-          </ul>
+      {#each [Projects[index]] as src (index)} <img class="carousel-image"
+      alt={name} {src} in:fly={{ x: -50, duration: 2000 }} /> {/each}
+    </div>
+
+    <div class="text-wrapper">
+      <div class="text-section">
+        <section class="section">
+          <h5 class="section_title">About this project</h5>
+          <p class="section_paragraph">
+            {abouts}
+          </p>
+        </section>
+
+        <section class="section">
+          <h5 class="tech_title">Tech Stack used</h5>
+          <div class="stack_list_wrapper">
+            <ul class="stack_list">
+              <li>{techs}</li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="project_buttons">
+          <a href="{gits}">
+            <button class="code">Code</button>
+          </a>
+          <a href="{url}">
+            <button class="view">View</button>
+          </a>
         </div>
-      </section>
-
-      <div class="project_buttons">
-        <a href="{gits}">
-          <button class="code">Code</button>
-        </a>
-        <a href="{url}">
-          <button class="view">View</button>
-        </a>
       </div>
     </div>
-  </div>
-  <div class="next_wrapper">
-    <img class="next" alt="next-arrow" src="{nextSlide}" on:click="{next}" />
+    <div class="next_wrapper">
+      <img class="next" alt="next-arrow" src="{nextSlide}" on:click="{next}" />
+    </div>
   </div>
 </div>

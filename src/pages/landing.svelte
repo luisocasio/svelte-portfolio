@@ -9,13 +9,15 @@
 </script>
 
 <style>
+  .wrapper{
+
+}
+
   li {
     list-style-type: none;
   }
   .banner-section {
     height: 650px;
-
-
   }
   .banner {
     width: 100%;
@@ -29,7 +31,7 @@
     align-items: center;
     justify-content: space-around;
     font-size: large;
-    padding: 1.5rem;
+    padding: 3rem;
 
   }
   .icon-container {
@@ -37,13 +39,16 @@
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
-    width: 5%;
     align-items: center;
-
+    padding:1.5rem;
+    height: 100%;
+    width: 100%;
   }
 </style>
 
-<NavBar id='nav_bar'/>
+
+<div class ='wrapper'>
+<NavBar />
 <div class="banner-section">
   <img class="banner" alt={desc} {src} />
 </div>
@@ -84,3 +89,5 @@
 <Carousel />
 <About />
 <Contact />
+
+</div>

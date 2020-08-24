@@ -12,6 +12,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding: 3rem;
   }
   input {
     height: 48px;
