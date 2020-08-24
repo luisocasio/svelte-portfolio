@@ -10,7 +10,7 @@
 
 <style>
   .wrapper{
-
+overflow: hidden;
 }
 
   li {

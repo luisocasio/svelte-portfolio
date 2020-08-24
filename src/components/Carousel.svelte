@@ -92,6 +92,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    padding: 0.5rem;
   }
 
   .carousel-image {
@@ -174,18 +175,20 @@
     justify-content: space-between;
     width: 100%;
     text-align: center;
-    border-bottom: 2px solid #d617bd;
   }
   .section_paragraph {
     width: 100%;
     height: 67%;
   }
   .section_title {
-    display: flex;
-    align-items: center;
+    border-bottom: 2px solid #d617bd;
+    width: 50%;
+    padding: 0.5rem;
   }
   .tech_title {
-    margin-top: 1rem;
+    border-bottom: 2px solid #d617bd;
+    width: 50%;
+    padding: 0.5rem;
   }
   .stack_list {
     width: 100%;
