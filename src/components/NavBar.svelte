@@ -50,9 +50,10 @@
 
 <style>
     nav {
+        width: 100%;
         background-color: #15202b;
         height: 75px;
-        position: sticky;
+        position: fixed;
         top: 0;
         z-index: 2;
     }
