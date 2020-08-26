@@ -79,7 +79,8 @@
             </section>
 
             {#each [Projects[index]] as src (index)} <img class="carousel-image"
-            alt={name} {src} in:fly={{ x: -50, duration: 2000 }} /> {/each}
+            alt='landing page of project' {src} in:fly={{ x: -50, duration: 2000 }}
+            /> {/each}
         </div>
 
         <div class="text-wrapper">
