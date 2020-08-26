@@ -3,7 +3,7 @@
 </script>
 
 <div class="about_header">
-    <img class="header" src="src" alt="blue-header" />
+    <img class="header" src={src} alt="blue-header" />
     <h1 class="about_title">About Me</h1>
     <button class="resume_button">
         <a href="https://resume.creddle.io/resume/63v349pbnj3">Resume</a>

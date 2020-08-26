@@ -37,14 +37,14 @@
             class={`mobile-icon${showMobileMenu ? ' active' : ''}`}
         >
             <div class="middle-line" />
+            <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
+                {#each navItems as item}
+                    <li>
+                        <a href={item.href}>{item.label}</a>
+                    </li>
+                {/each}
+            </ul>
         </div>
-        <ul class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
-            {#each navItems as item}
-                <li>
-                    <a href={item.href}>{item.label}</a>
-                </li>
-            {/each}
-        </ul>
     </div>
 </nav>
 
