@@ -1,9 +1,5 @@
 <script>
-  import Landing from "./pages/landing.svelte";
+    import Landing from './pages/landing.svelte'
 </script>
 
-
-
-
 <Landing />
-
