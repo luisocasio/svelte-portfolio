@@ -11,7 +11,7 @@
 <div class="wrapper">
     <NavBar />
     <div class="banner-section">
-        <img class="banner" alt={desc} src="src" />
+        <img class="banner" alt={desc} src={src} />
     </div>
 
     <div class="tech-icons">

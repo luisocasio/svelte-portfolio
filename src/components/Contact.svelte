@@ -3,7 +3,7 @@
 </script>
 
 <div class="header_container">
-    <img class="header" src="src" alt="blue-header" />
+    <img class="header" src={src} alt="blue-header" />
     <h1 class="header_title">Lets Keep In Touch</h1>
 </div>
 
