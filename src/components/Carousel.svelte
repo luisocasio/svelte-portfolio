@@ -55,8 +55,8 @@
                 '\nGatsby\nWordPress\nGraphql\nAWS-Services\namplify\nroute53    \nlightsail',
             ],
         },
-        { id: 2, project: ['\nspa\nreact\nsass'] },
-        { id: 3, project: ['\nreact\nmongoDB\nnode\nexpress\nsass'] },
+        { id: 2, project: ['\nspa\nreact\nsass\n'] },
+        { id: 3, project: ['\nreact\nmongoDB\nnode\nexpress\nsass\n'] },
     ]
 
     $: project = Object.keys(projects[slide])
@@ -242,7 +242,12 @@
     }
     .section_paragraph {
         width: 100%;
-        height: 67%;
+        height: 100%;
+        line-height: 1.5rem;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .section_title {
         border-bottom: 2px solid #d617bd;
