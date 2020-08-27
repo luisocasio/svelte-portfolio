@@ -78,7 +78,7 @@
     .resume_button {
         position: absolute;
         top: 50%;
-        right: 16px;
+        left: 20%;
         transform: translate(-50%, -50%);
         background-color: #21367f;
         color: #fff;
@@ -88,6 +88,6 @@
         border-radius: 35px;
         font-size: small;
         margin-right: 2.25rem;
-        border: 2px solid #2dfafc;
+        border: 2px solid #d617bd;
     }
 </style>
