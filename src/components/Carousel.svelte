@@ -49,17 +49,20 @@
     ]
 
     const technologies = [
-        { 0: ['Gatsby', 'WordPress', 'Graphql', 'AWS amplify'] },
-        { 1: ['React', 'SASS'] },
-        { 2: ['React', 'mongoDB', 'node', 'express'] },
+        {
+            id: 1,
+            project: [
+                '\nGatsby\nWordPress\nGraphql\nAWS-Services\namplify\nroute53    \nlightsail',
+            ],
+        },
+        { id: 2, project: ['\nReact\nSASS'] },
+        { id: 3, project: ['\nReact\nmongoDB\nnode\nexpress'] },
     ]
 
     $: project = Object.keys(projects[slide])
     $: url = Object.values(projects[slide])
     $: git = Object.values(projects_url[slide])
     $: about = Object.values(projects_about[slide])
-    $: tech = Object.values(technologies[slide])
-    $: console.log(tech)
 </script>
 
 <div class="carousel_wrapper">
@@ -68,8 +71,8 @@
             <img
                 class="previous"
                 alt="go-back-arrow"
-                src="{previousSlide}"
-                on:click="{previous}"
+                src={previousSlide}
+                on:click={previous}
             />
         </div>
 
@@ -78,9 +81,14 @@
                 <h5>{project}</h5>
             </section>
 
-            {#each [Projects[index]] as src (index)} <img class="carousel-image"
-            alt='landing page of project' {src} in:fly={{ x: -50, duration: 2000 }}
-            /> {/each}
+            {#each [Projects[index]] as src (index)}
+                <img
+                    class="carousel-image"
+                    alt="landing page of project"
+                    src={src}
+                    in:fly={{ x: -50, duration: 2000 }}
+                />
+            {/each}
         </div>
 
         <div class="text-wrapper">
@@ -93,15 +101,21 @@
                 <section class="section">
                     <h5 class="tech_title">Tech Stack used</h5>
                     <div class="stack_list_wrapper">
-                        <h5 class="stack_list">{tech}</h5>
+                        {#each [technologies[index]] as { id, project }}
+                            <p>
+                                {project.map((e) => {
+                                    return e.toString()
+                                })}
+                            </p>
+                        {/each}
                     </div>
                 </section>
 
                 <div class="project_buttons">
-                    <a href="{git}">
+                    <a href={git}>
                         <button class="code">Code</button>
                     </a>
-                    <a href="{url}">
+                    <a href={url}>
                         <button class="view">View</button>
                     </a>
                 </div>
@@ -111,8 +125,8 @@
             <img
                 class="next"
                 alt="next-arrow"
-                src="{nextSlide}"
-                on:click="{next}"
+                src={nextSlide}
+                on:click={next}
             />
         </div>
     </div>
@@ -243,13 +257,14 @@
     .stack_list {
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        font-size: small;
     }
     .stack_list_wrapper {
         height: 100%;
+        display: flex;
+        align-items: center;
         width: 100%;
+        word-spacing: 30rem;
+        line-height: 2rem;
+        justify-content: center;
     }
 </style>
