@@ -38,13 +38,13 @@
 
     const projects_about = [
         {
-            0: 'A Headless WordPress site created for a client in the music industry. This client wanted his music to be streamed and downloaded across various types of devices.   ',
+            0: 'A Headless WordPress site created for a client in the music industry. This website allows users to stream and downloaded music across various devices thanks to its custom media player. Users can also purchase instrumentals through checkout service. The benefits of a headless cms is that my client has full control of the content on the site through a user friendly ui thanks to wordpress.',
         },
         {
-            1: 'Single page application that gives its user a fast and snappy feel. This is possible because we are rendering our components and not having to retrieve data from a server.',
+            1: 'Single page application created for a local coffee shop business. This applicaton takes full advantage of react and the react-router library to render components and routes on the client rather than fetching data from a server.',
         },
         {
-            2: "During an 8 week period I worked along 5 other developers and a UX designer to create 'Market Avenue'. An application that brings local vendors and locals closer.",
+            2: 'An 8 week long project that included 5 other developers and a UX designer. Market Avenue is an application that brings local vendors and locals closer.',
         },
     ]
 
@@ -56,7 +56,7 @@
             ],
         },
         { id: 2, project: ['\nspa\nreact\nsass'] },
-        { id: 3, project: ['\nreact\nmongoDB\nnode\nexpress'] },
+        { id: 3, project: ['\nreact\nmongoDB\nnode\nexpress\nsass'] },
     ]
 
     $: project = Object.keys(projects[slide])
