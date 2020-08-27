@@ -6,6 +6,8 @@
     let project3 = '/assets/projects/market.png'
     let previousSlide = '/assets/svg/back.svg'
     let nextSlide = '/assets/svg/next.svg'
+    let heart = '/assets/svg/heartline.svg'
+    let heart_filled = '/assets/svg/heartfill.svg'
 
     let index = 0
     let slide = 0
@@ -63,6 +65,8 @@
     $: url = Object.values(projects[slide])
     $: git = Object.values(projects_url[slide])
     $: about = Object.values(projects_about[slide])
+
+    let user = { liked: true }
 </script>
 
 <div class="carousel_wrapper">
@@ -81,14 +85,27 @@
                 <h5>{project}</h5>
             </section>
 
-            {#each [Projects[index]] as src (index)}
-                <img
-                    class="carousel-image"
-                    alt="landing page of project"
-                    src={src}
-                    in:fly={{ x: -50, duration: 2000 }}
-                />
-            {/each}
+            <div class="image_wrapper">
+                {#each [Projects[index]] as src (index)}
+                    <img
+                        class="carousel-image"
+                        alt="landing page of project"
+                        src={src}
+                        in:fly={{ x: -50, duration: 2000 }}
+                    />
+                {/each}
+            </div>
+
+            <div class="like_section">
+                {#if !user.liked}
+                    <p class="liked_title">Thanks for liking!</p>
+                {:else}
+                    <p class="like_title">
+                        Like what you see? Give this page a like!
+                    </p>
+                    <img class="heart" src={heart} alt="heart filled pink" />
+                {/if}
+            </div>
         </div>
 
         <div class="text-wrapper">
@@ -133,6 +150,20 @@
 </div>
 
 <style>
+    .heart {
+        width: 10%;
+    }
+    .like_title {
+        padding: 1rem;
+        width: 100%;
+        color: #d617bd;
+    }
+    .like_section {
+        height: 100%;
+    }
+    .liked_title {
+        color: #d617bd;
+    }
     .carousel_wrapper {
         height: 650px;
     }
@@ -144,27 +175,40 @@
         background-color: #15202b;
     }
 
+    .image_wrapper {
+        height: 71%;
+        width: 85%;
+    }
+
     .slide {
         width: 60%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
-        height: 90%;
+        height: 100%;
         padding: 1.5rem;
+    }
+
+    .like_section {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 
     .slide_title {
         font-size: small;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: flex-start;
         padding: 0.5rem;
     }
 
     .carousel-image {
         width: 80%;
-        height: 85%;
+        height: 80%;
+        padding: 3rem;
     }
     .previous_wrapper {
         background-color: #21367f;
